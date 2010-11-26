@@ -1,0 +1,6 @@
+set_table_name
+default_scope
+state_machine
+
+orders => Cart, Order
+
