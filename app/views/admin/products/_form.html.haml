@@ -1,0 +1,6 @@
+- form_for([:admin,product]) do |f|
+  %p= f.label :name, "Nazwa:"
+  %p= f.text_field :name
+  %p= f.label :price, "Cena:"
+  %p= f.text_field :price
+  %p= f.submit submit_label
