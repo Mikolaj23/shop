@@ -1,0 +1,5 @@
+= render :partial => 'cart/cart_div', :locals => {:cart => @cart}
+- form_for @order do |f|
+  %p= f.label :address, "Dane adresowe: "
+  %p= f.text_area:address
+  %p= f.submit "Zamów"

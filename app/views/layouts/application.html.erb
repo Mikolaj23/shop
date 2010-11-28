@@ -16,8 +16,11 @@
 
 <% if admin_signed_in? %>
 <%= link_to "Wyloguj się adminie", destroy_admin_session_path %>
+<%= link_to "Produkty", admin_products_path %>
+<%= link_to "Zamówienia", admin_orders_path %>
 <% else %>
 <%= link_to "Zaloguj się adminie", new_admin_session_path %>
+login: admin@gmail.com, hasło: heroku
 <% end %>
 
 

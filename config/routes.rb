@@ -10,8 +10,11 @@ Sklep::Application.routes.draw do
 
   resources :products
   resources :cart_items
+  resources :orders
+
   namespace "admin" do
     resources :products
+    resources :orders
   end
   
   # Sample of regular route:

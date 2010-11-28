@@ -9,6 +9,6 @@
       %p
         = 'sztuk: ' + i.quantity.to_s
         = link_to "Zmień", edit_cart_item_path(i.id)
-    %p= link_to "Złóż zamówienie"
+    %p= link_to "Złóż zamówienie", new_order_path
   - else
     pusty 

@@ -1,0 +1,12 @@
+= @orders.size.to_s
+- @orders.each do |o|
+  %hr
+  %p= o.address
+  = #render :partial => 'cart/cart_div', :locals => {:cart => o.cart}
+  - sum = 0
+  - o.cart.cart_items.each do |i|
+    %p 
+      - price = i.quantity * i.product.price
+      - sum += price
+      =i.product.name + ' x ' + i.quantity.to_s + ' = ' + price.to_s
+    %p= 'razem: ' + sum.to_s
