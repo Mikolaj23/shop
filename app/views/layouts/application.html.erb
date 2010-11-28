@@ -8,11 +8,6 @@
 </head>
 <body>
 <%= link_to "Home", root_path%>
-<% if user_signed_in? %>
-<%= link_to "Wyloguj się użytkowniku", destroy_user_session_path %>
-<% else %>
-<%= link_to "Zaloguj się użytkowniku", new_user_session_path %>
-<% end %>
 
 <% if admin_signed_in? %>
 <%= link_to "Wyloguj się adminie", destroy_admin_session_path %>
