@@ -1,7 +1,9 @@
 #cart
   Koszyk
   - if @cart != nil and not @cart.cart_items.empty?
+    - sum = 0
     - @cart.cart_items.each do |i|
+      - sum += i.quantity * i.product.price
       %hr
       %p
         = i.product.name
@@ -9,6 +11,8 @@
       %p
         = 'sztuk: ' + i.quantity.to_s
         = link_to "Zmień", edit_cart_item_path(i.id)
+    %hr
+    %p= 'Razem: ' + sum.to_s
     %p= link_to "Złóż zamówienie", new_order_path
   - else
     pusty 
