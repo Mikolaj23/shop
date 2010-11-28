@@ -1,28 +1,13 @@
 class ProductsController < ApplicationController
 
   def index
+    @cart = Cart.find(session[:cart_id]) if session[:cart_id] != nil
     @products = Product.all
   end
 
   def show
+    @cart = Cart.find(session[:cart_id]) if session[:cart_id] != nil
     @product = Product.find(params[:id])
   end
 
-  def new
-    @product = Product.new
-  end
-
-  def create
-  
-    redirect_to :back
-  end
-
-  def edit
-    @product = Product.find(params[:id])
-  end
-
-  def update
-    @product = Product.find(params[:id])
-    redirect_to :back
-  end
 end

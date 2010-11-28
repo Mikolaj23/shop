@@ -1,0 +1,5 @@
+%h1= @product.name
+%p= 'cena: ' + @product.price.to_s
+%p= link_to "Dodaj do koszyka", new_cart_item_path(:product_id => @product.id)
+
+= render :partial => 'cart/cart_div'

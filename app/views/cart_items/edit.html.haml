@@ -1,0 +1,7 @@
+Edytujesz pozycję na zamówieniu
+%p= @cart_item.product.name
+%p= @cart_item.product.price
+- form_for @cart_item do |f|
+  %p= f.label :quantity, "Ilość: "
+  %p= f.text_field :quantity
+  %p= f.submit "Zmień"

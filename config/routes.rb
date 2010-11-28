@@ -9,6 +9,7 @@ Sklep::Application.routes.draw do
   root :to => 'home#index'
 
   resources :products
+  resources :cart_items
   namespace "admin" do
     resources :products
   end

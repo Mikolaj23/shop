@@ -1,0 +1,8 @@
+Dodajesz produkt do koszyka:
+%p= @product.name
+%p= 'cena: ' + @product.price.to_s
+- form_for @cart_item do |f|
+  %p= f.label :quantity, "Ilość: "
+  %p= f.text_field :quantity
+  %p= hidden_field(:cart_item, :product_id, {:value => @product.id})
+  %p= f.submit "Dodaj"

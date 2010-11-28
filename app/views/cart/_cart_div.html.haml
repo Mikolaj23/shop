@@ -1,0 +1,14 @@
+#cart
+  Koszyk
+  - if @cart != nil and not @cart.cart_items.empty?
+    - @cart.cart_items.each do |i|
+      %hr
+      %p
+        = i.product.name
+        = link_to "Usuń", cart_item_path(i.id), :method => 'delete'
+      %p
+        = 'sztuk: ' + i.quantity.to_s
+        = link_to "Zmień", edit_cart_item_path(i.id)
+    %p= link_to "Złóż zamówienie"
+  - else
+    pusty 
